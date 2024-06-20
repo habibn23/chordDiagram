@@ -11,7 +11,7 @@ if uploaded_file is not None:
     string_data = stringio.read()
     st.success('File successfully uploaded!')
 
-def process_data():
+def process_data(string_data):
     df = pd.read_csv(StringIO(string_data), sep='\t')
     df = df[df['status'] == 'RMG_53']
     filtered_df = df[["UPN", "AF", "SYMBOL"]]
